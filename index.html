@@ -205,13 +205,14 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .appbar-inner { max-width: 1200px; margin-inline: auto; padding-left: var(--gutter); padding-right: var(--gutter-r); display: flex; align-items: center; gap: 0 28px; min-height: 64px; }
 .tabs { margin-left: auto; min-width: 0; }
 .tabs ul { display: flex; }
-.tabs a { position: relative; display: block; padding: 23px 11px; font: 400 0.875rem/1 var(--font-display); color: var(--band-muted); text-decoration: none; white-space: nowrap; transition: color .2s; }
+.tabs a { position: relative; display: block; padding: 23px 9px; font: 400 0.875rem/1 var(--font-display); color: var(--band-muted); text-decoration: none; white-space: nowrap; transition: color .2s; }
 .tabs a:hover { color: var(--band-fg); }
 .tabs a[aria-current="page"] { color: var(--band-fg); }
-.tabs a[aria-current="page"]::after { content: ""; position: absolute; left: 11px; right: 11px; bottom: 0; height: 2px; background: var(--band-accent); }
+.tabs a[aria-current="page"]::after { content: ""; position: absolute; left: 9px; right: 9px; bottom: 0; height: 2px; background: var(--band-accent); }
 .appbar-actions { display: flex; align-items: center; gap: 16px; }
 .appbar .btn { min-height: 40px; padding: 0 16px; font-size: 0.875rem; }
 .appbar .btn-link { padding: 0; }
+.appbar-cv svg { width: 16px; height: 16px; }
 @media (max-width: 1180px) {
   :root { --appbar-h: 108px; }
   .appbar-inner { flex-wrap: wrap; min-height: 0; padding-top: 10px; }
@@ -229,7 +230,14 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
   .tabs li:first-child a { padding-left: 0; }
   .tabs li:first-child a::after { left: 0; }
 }
-@media (max-width: 640px) { .appbar-li { display: none; } .appbar .wordmark { font-size: 1.0625rem; } }
+@media (max-width: 640px) { .appbar-li { display: none; } .appbar .wordmark { font-size: 1.0625rem; } .appbar-actions { gap: 12px; } }
+@media (max-width: 400px) {
+  .appbar-inner { column-gap: 12px; }
+  .appbar-actions { gap: 8px; }
+  .appbar .btn-primary { padding: 0 12px; }
+  .appbar-cv { min-width: 44px; justify-content: center; }
+  .appbar-cv .cv-label { display: none; }
+}
 
 /* ---------- Views: one section at a time once JS runs; the whole page without it ---------- */
 .js .view { display: none; }
@@ -708,6 +716,7 @@ html[data-view="contact"] #contact { display: flex; flex-direction: column; just
       </ul>
     </nav>
     <div class="appbar-actions">
+      <a class="btn btn-link appbar-cv" href="Tristan-Listanco-CV-Oct2026.pdf" download type="application/pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span class="cv-label">CV</span><span class="sr-only"> (PDF, 128 KB)</span></a>
       <a class="btn btn-link appbar-li" href="https://www.linkedin.com/in/tristan-listanco/" target="_blank" rel="noopener">LinkedIn</a>
       <a class="btn btn-primary" href="mailto:tristan.listanco@g.msuiit.edu.ph?subject=Hello%20Tristan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="m3.5 6 8.5 7 8.5-7"/></svg> Email me</a>
     </div>
@@ -733,6 +742,7 @@ html[data-view="contact"] #contact { display: flex; flex-direction: column; just
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="m3.5 6 8.5 7 8.5-7"/></svg>
             Email me
           </a>
+          <a class="btn btn-ghost" href="Tristan-Listanco-CV-Oct2026.pdf" download type="application/pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg> Download CV<span class="sr-only"> (PDF, 128 KB)</span></a>
           <a class="btn btn-ghost" href="https://www.linkedin.com/in/tristan-listanco/" target="_blank" rel="noopener">
             LinkedIn
             <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
@@ -1166,6 +1176,7 @@ html[data-view="contact"] #contact { display: flex; flex-direction: column; just
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="m3.5 6 8.5 7 8.5-7"/></svg>
             Email me
           </a>
+          <a class="btn btn-ghost" href="Tristan-Listanco-CV-Oct2026.pdf" download type="application/pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg> Download CV<span class="sr-only"> (PDF, 128 KB)</span></a>
           <a class="btn btn-ghost" href="https://www.linkedin.com/in/tristan-listanco/" target="_blank" rel="noopener">LinkedIn
             <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
           </a>
