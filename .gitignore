@@ -1,0 +1,7 @@
+# Design notes and tool folders stay local
+PRODUCT.md
+.impeccable/
+.cursor/
+.gemini/
+.claude/
+.DS_Store
