@@ -143,7 +143,11 @@ body {
   font: 400 var(--step-0)/1.65 var(--font-body);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  min-height: 100vh; min-height: 100svh;
+  display: flex; flex-direction: column;
 }
+#main { flex: 1 0 auto; display: flex; flex-direction: column; }
+#main > .view { flex: 1 0 auto; }
 img { max-width: 100%; height: auto; display: block; }
 a { color: inherit; text-underline-offset: 3px; }
 html { scrollbar-color: var(--line-strong) var(--bg); }
@@ -240,6 +244,7 @@ html[data-view="contact"] #contact { display: block; }
 .view, .view [id] { scroll-margin-top: var(--appbar-h); }
 /* a view opens directly under the app bar, so it needs less top padding than a section mid-page */
 .js .section.view { padding-top: clamp(48px, 6vw, 88px); }
+html[data-view="contact"] #contact { display: flex; flex-direction: column; justify-content: center; padding-block: clamp(56px, 8vw, 104px); }
 .next-view {
   display: flex; align-items: center; justify-content: space-between; gap: 16px;
   margin-top: clamp(48px, 6vw, 72px); padding-top: 20px; border-top: 1px dashed var(--line-strong);
@@ -579,7 +584,9 @@ html[data-view="contact"] #contact { display: block; }
 /* ---------- Contact ---------- */
 .contact { background: var(--band-bg); color: var(--band-fg); position: relative; overflow: hidden; border-top: 1px solid var(--band-line); }
 .contact .g { color: var(--band-line); }
-.contact-grid { display: grid; grid-template-columns: 28px minmax(0, 1.2fr) minmax(0, 1fr); gap: 32px 48px; align-items: end; position: relative; }
+.contact-grid { display: grid; grid-template-columns: 28px minmax(0, 1.2fr) minmax(0, 1fr); gap: 32px 48px; align-items: center; position: relative; }
+/* construction line: full bleed, a fixed distance above the content wherever it lands */
+.contact-grid::before { content: ""; position: absolute; left: -100vw; right: -100vw; top: clamp(-48px, -4vw, -28px); height: 1px; color: var(--band-line); background: var(--dash-h); pointer-events: none; }
 .contact .side-label { color: var(--band-muted); }
 .contact .side-label::before { background: var(--band-line); }
 .contact h2 { font-size: clamp(2.25rem, 3.6vw, 3rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.08; }
@@ -1140,7 +1147,6 @@ html[data-view="contact"] #contact { display: block; }
 
 <!-- ============ CONTACT ============ -->
 <section class="contact on-band section view" id="contact" aria-labelledby="contact-title">
-  <span class="g gh" style="top:64px; left:0; right:0"></span>
   <div class="wrap">
     <div class="contact-grid">
       <p class="side-label" aria-hidden="true">Contact</p>
