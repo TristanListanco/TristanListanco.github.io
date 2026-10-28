@@ -317,7 +317,7 @@ html[data-view="contact"] #contact { display: flex; flex-direction: column; just
 
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.78fr) 196px;
+  grid-template-columns: minmax(0, 1fr) 196px;
   align-items: stretch;
   padding-top: clamp(32px, 5vw, 64px);
   position: relative;
@@ -331,11 +331,11 @@ html[data-view="contact"] #contact { display: flex; flex-direction: column; just
 .status strong { display: block; color: var(--band-fg); font-weight: 500; }
 .dot { width: 7px; height: 7px; margin-top: 5px; border-radius: 50%; background: var(--band-accent); box-shadow: 0 0 0 3px rgba(27,152,224,.22); flex: none; }
 
-.hero h1 { font-size: var(--step-4); line-height: 1.02; letter-spacing: -0.035em; font-weight: 700; }
+.hero h1 { font-size: clamp(2.75rem, 7.5vw, 6rem); line-height: 1.02; letter-spacing: -0.035em; font-weight: 700; }
 .hero h1 .hello { display: block; font-weight: 200; letter-spacing: -0.02em; margin-bottom: 0.08em; }
 .hero h1 .line { display: block; }
 .rule { width: 52px; height: 2px; background: var(--band-fg); display: block; }
-.intro { max-width: 40ch; color: var(--band-muted); font-size: 1.0625rem; line-height: 1.7; }
+.intro { max-width: 46ch; color: var(--band-muted); font-size: 1.0625rem; line-height: 1.7; }
 .intro strong { color: var(--band-fg); font-weight: 600; }
 
 /* Guide lines (the dashed construction grid) */
@@ -343,16 +343,6 @@ html[data-view="contact"] #contact { display: flex; flex-direction: column; just
 .gv { width: 1px; background: var(--dash-v); }
 .gh { height: 1px; background: var(--dash-h); }
 
-.hero-photo { position: relative; margin: 0; padding: 18px; align-self: start; }
-.hero-photo .frame { position: relative; overflow: hidden; background: #0f2234; }
-.hero-photo img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: 50% 22%; }
-.hero-photo figcaption {
-  position: absolute; left: 18px; right: 18px; bottom: 18px;
-  display: flex; align-items: center; gap: 12px;
-  padding: 14px 16px; background: linear-gradient(to top, rgba(10, 24, 37, .9), rgba(10, 24, 37, 0));
-  font: 500 0.8125rem/1.3 var(--font-display); color: #fff;
-}
-.nw { white-space: nowrap; }
 .badge-mark { width: 14px; height: 22px; border: 2px solid var(--band-accent); flex: none; }
 
 .hero-stats { position: relative; margin: 0; display: flex; flex-direction: column; text-align: right; }
@@ -371,12 +361,11 @@ html[data-view="contact"] #contact { display: flex; flex-direction: column; just
 @media (prefers-reduced-motion: no-preference) {
   .hero .gv { animation: drawV 1s cubic-bezier(.2,.7,.2,1) both; transform-origin: top; }
   .hero .gh { animation: drawH 1s cubic-bezier(.2,.7,.2,1) both; transform-origin: left; }
-  .hero-copy > *, .hero-photo .frame, .stat, .coords { animation: rise .7s cubic-bezier(.2,.7,.2,1) both; }
+  .hero-copy > *, .stat, .coords { animation: rise .7s cubic-bezier(.2,.7,.2,1) both; }
   .hero-copy > :nth-child(2) { animation-delay: .06s; }
   .hero-copy > :nth-child(3) { animation-delay: .12s; }
   .hero-copy > :nth-child(4) { animation-delay: .18s; }
   .hero-copy > :nth-child(5) { animation-delay: .24s; }
-  .hero-photo .frame { animation-delay: .1s; }
   .stat:nth-of-type(1) { animation-delay: .2s; }
   .stat:nth-of-type(2) { animation-delay: .28s; }
   .stat:nth-of-type(3) { animation-delay: .36s; }
@@ -620,7 +609,7 @@ html[data-view="contact"] #contact { display: flex; flex-direction: column; just
 
 /* ---------- Responsive ---------- */
 @media (max-width: 1080px) {
-  .hero-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr); }
+  .hero-grid { grid-template-columns: minmax(0, 1fr); }
   .hero-stats { grid-column: 1 / -1; flex-direction: row; text-align: left; margin-top: 24px; }
   .stat { flex: 1; padding: 22px 16px 22px 0; }
   .stat::after { display: none; }
@@ -659,8 +648,6 @@ html[data-view="contact"] #contact { display: flex; flex-direction: column; just
 @media (max-width: 640px) {
   .hero-grid { grid-template-columns: minmax(0, 1fr); }
   .hero-copy { padding-right: 0; }
-  .hero-photo { max-width: 400px; padding: 14px; margin-top: 24px; }
-  .hero-photo figcaption { left: 14px; right: 14px; bottom: 14px; }
   .hero-stats { flex-wrap: wrap; }
   .stat { flex: 1 1 30%; padding-right: 8px; }
   .stat + .stat { padding-left: 12px; }
@@ -682,7 +669,6 @@ html[data-view="contact"] #contact { display: flex; flex-direction: column; just
   .gallery { gap: 10px; }
   .about-photo, .about-more { display: none; }
   .hero-stats { order: 1; }
-  .hero-photo { order: 2; }
   .xp { grid-template-columns: minmax(0, 1fr) auto; }
   .xp .when { grid-column: 1; grid-row: 1; }
   .xp .role { grid-column: 2; grid-row: 1; }
@@ -736,7 +722,7 @@ html[data-view="contact"] #contact { display: flex; flex-direction: column; just
         <p class="status"><span class="dot" aria-hidden="true"></span><span><strong>Open to internships from January 2027</strong>Embedded · IoT · Computer vision · Mobile</span></p>
         <h1><span class="hello">Hello!</span> <span class="line">I'm Tristan</span> <span class="line">Listanco</span></h1>
         <span class="rule" aria-hidden="true"></span>
-        <p class="intro">I build <strong>embedded and IoT systems, mobile apps and computer vision tools</strong> for farms, water systems and the communities that depend on them. I'm a student at MSU-IIT in Iligan City, Philippines, and I publish research on what I build.</p>
+        <p class="intro">I build <strong>embedded and IoT systems, mobile apps and computer vision tools</strong> for farms, water systems and the communities that depend on them. I'm a Computer Applications student at MSU-IIT in Iligan City, Philippines, graduating in 2027, and I publish research on what I build.</p>
         <div class="actions">
           <a class="btn btn-primary" href="mailto:tristan.listanco@g.msuiit.edu.ph?subject=Hello%20Tristan">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="m3.5 6 8.5 7 8.5-7"/></svg>
@@ -750,17 +736,6 @@ html[data-view="contact"] #contact { display: flex; flex-direction: column; just
           <a class="btn btn-link" href="https://github.com/TristanListanco" target="_blank" rel="noopener">GitHub <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
         </div>
       </div>
-
-      <figure class="hero-photo">
-        <span class="g gv hide-sm" style="left:0; top:-56px; bottom:-60px"></span>
-        <span class="g gh" style="top:0; left:-60px; right:0"></span>
-        <span class="g gh" style="bottom:0; left:-30px; right:0"></span>
-        <span class="g gh hide-sm" style="top:40%; left:100%; width:60px"></span>
-        <div class="frame">
-          <img src="assets/tristan-portrait-edited.jpg" alt="Tristan Listanco smiling on the MSU-IIT campus" width="933" height="1400" fetchpriority="high">
-        </div>
-        <figcaption><span class="badge-mark" aria-hidden="true"></span><span>BS Computer Applications · <span class="nw">Class of 2027</span></span></figcaption>
-      </figure>
 
       <div class="hero-stats">
         <span class="g gv" style="left:0; top:-56px; bottom:-60px"></span>
