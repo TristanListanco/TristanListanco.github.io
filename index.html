@@ -742,7 +742,7 @@ html[data-view="contact"] #contact { display: flex; flex-direction: column; just
         <span class="g gv" style="right:0; top:-56px; height:56px"></span>
         <p class="stat"><span class="num">02</span> <span class="lbl">International conference papers</span></p>
         <p class="stat"><span class="num">16</span> <span class="lbl">Awards and placements since 2021</span></p>
-        <p class="stat"><span class="num">08</span> <span class="lbl">Open-source projects on GitHub</span></p>
+        <p class="stat"><span class="num">09</span> <span class="lbl">Open-source projects on GitHub</span></p>
         <div class="coords">
           <span class="hatch" aria-hidden="true"></span>
           <p>8.2280° N, 124.2452° E<br>Iligan City, PH</p>
@@ -761,7 +761,7 @@ html[data-view="contact"] #contact { display: flex; flex-direction: column; just
       <p class="sec-lede">Pick an area to open it on its own.</p>
     </div>
     <ul class="glance-list">
-      <li><a href="#work"><span class="gl-label">Work</span><span class="gl-sum">Pepper Watch, STM32 firmware, an Android app and web apps</span><span class="gl-count">8 projects</span><span class="circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+      <li><a href="#work"><span class="gl-label">Work</span><span class="gl-sum">Pepper Watch, real-time activity recognition, STM32 firmware, Android and web apps</span><span class="gl-count">9 projects</span><span class="circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
       <li><a href="#research"><span class="gl-label">Research</span><span class="gl-sum">A systematic review at EUSPN 2026 and a Springer-published paper from ICICT 2026</span><span class="gl-count">2 papers</span><span class="circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
       <li><a href="#experience"><span class="gl-label">Experience</span><span class="gl-sum">Mobile Engineer at Build My Wealth Inc. and a BS in Computer Applications, class of 2027</span><span class="gl-count">2 roles</span><span class="circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
       <li><a href="#awards"><span class="gl-label">Awards</span><span class="gl-sum">Champion at the Analog Devices Academe Expo 2026, plus UNESCO and Huawei placements</span><span class="gl-count">16 placements</span><span class="circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
@@ -840,6 +840,28 @@ html[data-view="contact"] #contact { display: flex; flex-direction: column; just
         <div><dt>Edge</dt><dd>Raspberry Pi 5 · camera · YOLOv8n</dd></div>
         <div><dt>Internet</dt><dd>Not required. Inference stays on the device</dd></div>
         <div><dt>Paper</dt><dd>Systematic review, EUSPN 2026</dd></div>
+      </dl>
+    </article>
+
+    <article class="feature">
+      <div class="feature-copy">
+        <div class="feature-title">
+          <h3>RT-Spark Activity Recognition</h3>
+          <p class="feature-meta">Lab build · 2026</p>
+        </div>
+        <p>Real-time recognition of walking, running and standing still. The RT-Spark board samples its 6-axis IMU and streams the readings over Wi-Fi and MQTT to a cloud stack on Azure. There a small 1D-CNN classifies each 4-second window, PostgreSQL stores the result, and a Flask API serves it to an Android app. The prediction is also sent back to the board's LCD.</p>
+        <div class="actions">
+          <a class="btn btn-ghost" href="https://github.com/TristanListanco/rt-spark-activity-recognition" target="_blank" rel="noopener"><span class="sr-only">RT-Spark Activity Recognition </span>Repository
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+          </a>
+        </div>
+      </div>
+      <dl class="spec">
+        <div><dt>Board</dt><dd>RT-Spark (STM32F407) · RT-Thread</dd></div>
+        <div><dt>Sensing</dt><dd>ICM-20608 6-axis IMU at 5&nbsp;Hz · RW007 Wi-Fi · MQTT</dd></div>
+        <div><dt>Model</dt><dd>1D-CNN, about 1,200 parameters, 30&nbsp;KB ONNX · 97.2% on held-out board recordings</dd></div>
+        <div><dt>Cloud</dt><dd>Docker Compose on Azure: Mosquitto, PostgreSQL, Flask API</dd></div>
+        <div><dt>App</dt><dd>Android · Kotlin, Jetpack Compose, Volley</dd></div>
       </dl>
     </article>
 
@@ -1068,11 +1090,11 @@ html[data-view="contact"] #contact { display: flex; flex-direction: column; just
       <div class="skills-col">
         <h3>Engineering</h3>
         <div class="skill"><h4>Programming languages</h4><ul class="chips"><li>Embedded C/C++</li><li>AVR Assembly</li><li>Python</li><li>Swift</li><li>Kotlin</li><li>JavaScript</li></ul></div>
-        <div class="skill"><h4>Embedded &amp; IoT</h4><ul class="chips"><li>STM32 Cube HAL</li><li>FreeRTOS</li><li>PlatformIO</li><li>Raspberry Pi 5</li><li>Wokwi</li><li>MQTT</li><li>Adafruit IO</li><li>Blynk</li><li>Wireless sensor networks</li></ul></div>
-        <div class="skill"><h4>Computer vision &amp; ML</h4><ul class="chips"><li>YOLOv8</li><li>OpenCV</li><li>Create ML</li><li>On-device inference</li></ul></div>
+        <div class="skill"><h4>Embedded &amp; IoT</h4><ul class="chips"><li>STM32 Cube HAL</li><li>FreeRTOS</li><li>RT-Thread</li><li>PlatformIO</li><li>Raspberry Pi 5</li><li>Wokwi</li><li>MQTT</li><li>Adafruit IO</li><li>Blynk</li><li>Wireless sensor networks</li></ul></div>
+        <div class="skill"><h4>Computer vision &amp; ML</h4><ul class="chips"><li>YOLOv8</li><li>OpenCV</li><li>Create ML</li><li>PyTorch</li><li>ONNX Runtime</li><li>On-device inference</li></ul></div>
         <div class="skill"><h4>Mobile</h4><ul class="chips"><li>Swift (iOS, watchOS)</li><li>Android Jetpack</li><li>React Native</li><li>React</li></ul></div>
-        <div class="skill"><h4>Web &amp; data</h4><ul class="chips"><li>Next.js (SSR)</li><li>MERN</li><li>PWAs</li><li>Supabase</li><li>MySQL</li></ul></div>
-        <div class="skill"><h4>Tools &amp; design</h4><ul class="chips"><li>Git</li><li>GitHub</li><li>GitLab</li><li>Figma</li><li>Technical writing</li><li>Code documentation</li></ul></div>
+        <div class="skill"><h4>Web &amp; data</h4><ul class="chips"><li>Next.js (SSR)</li><li>MERN</li><li>PWAs</li><li>Supabase</li><li>MySQL</li><li>PostgreSQL</li><li>Flask</li><li>Docker</li></ul></div>
+        <div class="skill"><h4>Tools &amp; design</h4><ul class="chips"><li>Git</li><li>GitHub</li><li>GitLab</li><li>GitHub Actions</li><li>Azure</li><li>Figma</li><li>Technical writing</li><li>Code documentation</li></ul></div>
       </div>
 
       <div class="skills-col minor">
